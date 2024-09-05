@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify Controller</title>
+    <style>
+      body {
+        width: 300px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #121212;
+        color: #ffffff;
+      }
+
+      h1,
+      h2 {
+        color: #1db954;
+        text-align: center;
+      }
+
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.1s;
+      }
+
+      #login-button,
+      #shuffle-liked-songs {
+        background-color: #1db954;
+        color: white;
+      }
+
+      #login-button:hover,
+      #shuffle-liked-songs:hover {
+        background-color: #1ed760;
+      }
+
+      #logout-button {
+        background-color: #b3b3b3;
+        color: #121212;
+      }
+
+      #logout-button:hover {
+        background-color: #ffffff;
+      }
+
+      button:active {
+        transform: scale(0.98);
+      }
+
+      #status,
+      #now-playing {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #b3b3b3;
+      }
+
+      #playlists {
+        margin-top: 20px;
+        max-height: 200px;
+        overflow-y: auto;
+      }
+
+      #playlists button {
+        background-color: #333;
+        color: white;
+        margin-top: 5px;
+      }
+
+      #playlists button:hover {
+        background-color: #444;
+      }
+
+      .spotify-logo {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto 20px;
+        display: block;
+      }
+
+      #content {
+        display: none;
+      }
+
+      #playlist-selector {
+        width: 100%;
+        margin-top: 10px;
+        padding: 5px;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+
+      #play-button {
+        margin-top: 10px;
+        background-color: #1db954;
+        color: white;
+      }
+
+      #play-button:disabled {
+        background-color: #333;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png"
+      alt="Spotify Logo"
+      class="spotify-logo"
+    />
+    <h1>Spotify Controller</h1>
+    <div id="login-section">
+      <button id="login-button">Log in to Spotify</button>
+    </div>
+    <div id="content">
+      <button id="logout-button">Log out</button>
+      <div id="status"></div>
+      <select id="playlist-selector">
+        <option>Loading playlists...</option>
+      </select>
+      <button id="play-button">Play Selected</button>
+      <div id="now-playing"></div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
